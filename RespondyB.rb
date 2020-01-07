@@ -20,7 +20,7 @@ exclude bad_words
 
 
 random_facts = ["Ruby, the programming language, was developed in the mid-1990's by Yukihiro 'Matz' Matsumoto in Japan! #Ruby #Facts", "Ruby, the programming language, was influenced by Perl, Smalltalk, Eiffel, Ada, Basic, and Lisp! #Ruby #Facts", "Ruby, the programming language, is dynamically typed and uses garbage collection! #Ruby #Facts", "Ruby, the programming language, supports multiple programming paradigms, including procedural, object-oriented, and functional programming! #Ruby #Facts"]
-
+hashtag_array = ["#respondyb","#Respondyb","#respondyB","#RespondyB"]
 start_time = DateTime.new(2019,12,29,0,0,0)
 
 loop do
@@ -34,7 +34,9 @@ loop do
     start_time = DateTime.now()
   end
 
-  sleep 30
+  
+
+  sleep 60
 
 end
 
