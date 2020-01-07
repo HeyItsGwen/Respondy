@@ -16,7 +16,7 @@ require 'chatterbot/dsl'
 # chatterbot from updating those values. This directive can also be
 # handy if you are doing something advanced where you want to track
 # which tweet you saw last on your own.
-no_update
+
 
 # remove this to get less output when running your bot
 verbose
@@ -84,8 +84,14 @@ only_interact_with_followers
 
 random_facts = ["Ruby, the programming language, was developed in the mid-1990's by Yukihiro 'Matz' Matsumoto in Japan!", "Ruby, the programming language, was influenced by Perl, Smalltalk, Eiffel, Ada, Basic, and Lisp!", "Ruby, the programming language, is dynamically typed and uses garbage collection!", "Ruby, the programming language, supports multiple programming paradigms, including procedural, object-oriented, and functional programming!"]
 loop do
-  tweet("Did you know that #{random_facts[rand(random_facts.length)]}")
-  sleep 43200
+  replies do |tweet|
+    reply "#USER# Did you know that #{random_facts[rand(random_facts.length)]}", tweet
+  end
+
+  #tweet("Did you know that #{random_facts[rand(random_facts.length)]}")
+
+  sleep 20
+
 end
 
 #
