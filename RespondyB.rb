@@ -82,9 +82,12 @@ only_interact_with_followers
 #  reply "Yes #USER#, you are very kind to say that!", tweet
 #end
 
+random_facts = ["Ruby, the programming language, was developed in the mid-1990's by Yukihiro 'Matz' Matsumoto in Japan!", "Ruby, the programming language, was influenced by Perl, Smalltalk, Eiffel, Ada, Basic, and Lisp!", "Ruby, the programming language, is dynamically typed and uses garbage collection!", "Ruby, the programming language, supports multiple programming paradigms, including procedural, object-oriented, and functional programming!"]
+random_num = rand(random_facts.length)
+
 while true do
   replies do |tweet|
-    reply "#USER# You tweeted at me!", tweet
+    reply "#USER# Did you know that #{random_facts[random_num]}", tweet
   end
   sleep(5)
 end
