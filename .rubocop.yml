@@ -7,8 +7,6 @@ AllCops:
     - "Rakefile"
   DisplayCopNames: true
 
-Metrics/LineLength:
-  Max: 1200
 Metrics/MethodLength:
   Include: ["app/controllers/*"]
   Max: 20
@@ -32,3 +30,5 @@ Layout/ExtraSpacing:
 Layout/MultilineMethodCallIndentation:
   Enabled: true
   EnforcedStyle: indented
+Layout/LineLength:
+  Max: 1200
