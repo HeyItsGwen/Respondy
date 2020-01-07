@@ -54,7 +54,6 @@ only_interact_with_followers
 # execute once, and then exit.
 #
 
-
 #
 # Here's the fun stuff!
 #
@@ -89,6 +88,7 @@ while true do
   end
   sleep(5)
 end
+
 #
 # this block handles incoming Direct Messages. if you want to do
 # something with DMs, go for it!
