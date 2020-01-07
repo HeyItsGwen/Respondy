@@ -3,60 +3,36 @@
 require 'rubygems'
 require 'chatterbot/dsl'
 
-#
-# this is the script for the twitter bot RespondyB
-# generated on 2020-01-07 11:07:50 -0600
-#
-
 # Enabling **debug_mode** prevents the bot from actually sending tweets.
+# no_update
 
-# Chatterbot will keep track of the most recent tweets your bot has
-# handled so you don't need to worry about that yourself. While
-# testing, you can use the **no_update** directive to prevent
-# chatterbot from updating those values. This directive can also be
-# handy if you are doing something advanced where you want to track
-# which tweet you saw last on your own.
-no_update
-
-# remove this to get less output when running your bot
 verbose
-
 # The blocklist is a list of users that your bot will never interact
-# with. Chatterbot will discard any tweets involving these users.
-# Simply add their twitter handle to this list.
-blocklist "abc", "def"
-
-# If you want to be even more restrictive, you can specify a
-# 'safelist' of accounts which your bot will *only* interact with. If
-# you uncomment this line, Chatterbot will discard any incoming tweets
-# from a user that is not on this list.
-# safelist "foo", "bar"
+# blocklist "abc", "def"
+# safelist "foo", "bar" (opposite of blocklist)
 
 # Here's a list of words to exclude from searches. Use this list to
 # add words which your bot should ignore for whatever reason.
 exclude "hi", "spammer", "junk"
 
-# Exclude a list of offensive, vulgar, 'bad' words. This list is
-# populated from Darius Kazemi's wordfilter module
-# @see https://github.com/dariusk/wordfilter
 exclude bad_words
 
-# This will restrict your bot to tweets that come from accounts that
-# are following your bot. A tweet from an account that isn't following
-# will be rejected
-only_interact_with_followers
 
-#
-# Specifying 'use_streaming' will cause Chatterbot to use Twitter's
-# Streaming API. Your bot will run constantly, listening for tweets.
-# Alternatively, you can run your bot as a cron/scheduled job. In that
-# case, do not use this line. Every time you run your bot, it will
-# execute once, and then exit.
-#
 
-#
-# Here's the fun stuff!
-#
+random_facts = ["Ruby, the programming language, was developed in the mid-1990's by Yukihiro 'Matz' Matsumoto in Japan!", "Ruby, the programming language, was influenced by Perl, Smalltalk, Eiffel, Ada, Basic, and Lisp!", "Ruby, the programming language, is dynamically typed and uses garbage collection!", "Ruby, the programming language, supports multiple programming paradigms, including procedural, object-oriented, and functional programming!"]
+
+loop do
+  
+  replies do |tweet|
+    reply "#USER# Did you know that #{random_facts[rand(random_facts.length)]}", tweet
+  end
+
+  #tweet("Did you know that #{random_facts[rand(random_facts.length)]}")
+
+  sleep 20
+
+end
+
 
 # Searches: You can do all sorts of stuff with searches on Twitter.
 # However, please note, interacting with users who don't follow your
@@ -81,13 +57,6 @@ only_interact_with_followers
 #  # replace it with the handle of the user you are interacting with
 #  reply "Yes #USER#, you are very kind to say that!", tweet
 #end
-
-while true do
-  replies do |tweet|
-    reply "#USER# You tweeted at me!", tweet
-  end
-  sleep(5)
-end
 
 #
 # this block handles incoming Direct Messages. if you want to do
