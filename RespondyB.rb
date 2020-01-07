@@ -19,7 +19,9 @@ exclude bad_words
 
 
 
-random_facts = ["Ruby, the programming language, was developed in the mid-1990's by Yukihiro 'Matz' Matsumoto in Japan!", "Ruby, the programming language, was influenced by Perl, Smalltalk, Eiffel, Ada, Basic, and Lisp!", "Ruby, the programming language, is dynamically typed and uses garbage collection!", "Ruby, the programming language, supports multiple programming paradigms, including procedural, object-oriented, and functional programming!"]
+random_facts = ["Ruby, the programming language, was developed in the mid-1990's by Yukihiro 'Matz' Matsumoto in Japan! #Ruby #Facts", "Ruby, the programming language, was influenced by Perl, Smalltalk, Eiffel, Ada, Basic, and Lisp! #Ruby #Facts", "Ruby, the programming language, is dynamically typed and uses garbage collection! #Ruby #Facts", "Ruby, the programming language, supports multiple programming paradigms, including procedural, object-oriented, and functional programming! #Ruby #Facts"]
+
+start_time = DateTime.new(2019,12,29,0,0,0)
 
 loop do
   
@@ -27,9 +29,12 @@ loop do
     reply "#USER# Did you know that #{random_facts[rand(random_facts.length)]}", tweet
   end
 
-  #tweet("Did you know that #{random_facts[rand(random_facts.length)]}")
+  if DateTime.now() - start_time >= 0.5
+    tweet("Did you know that #{random_facts[rand(random_facts.length)]}")
+    start_time = DateTime.now()
+  end
 
-  sleep 20
+  sleep 30
 
 end
 
