@@ -9,20 +9,23 @@ hashtag_array = ["#respondyb","#Respondyb","#respondyB","#RespondyB"]
 
 start_time = DateTime.new(2019,12,29,0,0,0)
 
-loop do
+while true do
   
   replies do |tweet|
     reply "#USER# Did you know that #{random_facts[rand(random_facts.length)]}", tweet
+    puts "Replied to a user who mentioned me"
   end
 
   if DateTime.now() - start_time >= 0.5
     tweet("Did you know that #{random_facts[rand(random_facts.length)]}")
     start_time = DateTime.now()
+    puts "Tweeted a fact at runtime, or on my 12 hour timer"
   end
 
   hashtag_array.each do |tag|
     search "#{tag}" do |tweet|
       retweet(tweet.id)
+      puts "reTweeted someone who hashtagged me"
     end
   end
 
