@@ -8,55 +8,7 @@ require 'chatterbot/dsl'
 # generated on 2020-01-07 11:07:50 -0600
 #
 
-#
-# Hello! This is some starter code for your bot. You will need to keep
-# this file and RespondyB.yml together to run your bot. The .yml file
-# will hold your authentication credentials and help track certain
-# information about what tweets the bot has seen so far.
-#
-# The code here is a basic starting point for a bot. It shows you the
-# different methods you can use to get tweets, send tweets, etc. It
-# also has a few settings/directives which you will want to read
-# about, and comment or uncomment as you see fit.
-#
-
-
-#
-# These lines here are just to make sure you edit this file before
-# trying to run your bot. You can safely remove them once you've
-# looked through this file.
-#
-puts "========================"
-puts "========================"
-puts "========================"
-puts "\n\n\n"
-
-puts "Hey there! You should open RespondyB.rb and take a look before running this script."
-
-puts "\n\n\n"
-exit
-
-
-
-#
-# Placing your security credentials right in a script like this is
-# handy, but potentially dangerous, especially if your code is
-# publicly available on github or somewhere else. However, if it is
-# convenient for you to have your authentication data here, you can
-# uncomment the lines below, and copy your configuration data from
-# RespondyB.yml into the commands.
-#
-# consumer_key 'consumer_key'
-# consumer_secret 'consumer_secret'
-#
-# secret 'secret'
-# token 'token'
-
-
-# Enabling **debug_mode** prevents the bot from actually sending
-# tweets. Keep this active while you are developing your bot. Once you
-# are ready to send out tweets, you can remove this line.
-debug_mode
+# Enabling **debug_mode** prevents the bot from actually sending tweets.
 
 # Chatterbot will keep track of the most recent tweets your bot has
 # handled so you don't need to worry about that yourself. While
@@ -101,7 +53,6 @@ only_interact_with_followers
 # case, do not use this line. Every time you run your bot, it will
 # execute once, and then exit.
 #
-use_streaming
 
 #
 # Here's the fun stuff!
@@ -130,6 +81,13 @@ use_streaming
 #  # replace it with the handle of the user you are interacting with
 #  reply "Yes #USER#, you are very kind to say that!", tweet
 #end
+
+while true do
+  replies do |tweet|
+    reply "#USER# You tweeted at me!", tweet
+  end
+  sleep(5)
+end
 
 #
 # this block handles incoming Direct Messages. if you want to do
