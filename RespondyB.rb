@@ -18,11 +18,13 @@ def reply
 end
 
 def auto_tweet
+  # rubocop: disable Style/GuardClause
   if DateTime.now - @start_time >= 0.5
     tweet("Did you know that #{@random_facts[rand(@random_facts.length)]}")
     @start_time = DateTime.now
     puts 'Tweeted a fact at runtime, or on my 12 hour timer'
   end
+  # rubocop: enable Style/GuardClause
 end
 
 def hashtag_tweet
