@@ -22,6 +22,9 @@ Style/Documentation:
   Enabled: false
 Style/ClassAndModuleChildren:
   Enabled: false
+Style/GuardClause:
+  Enabled: false
+
 
 Layout/AlignHash:
   EnforcedColonStyle: key
@@ -31,4 +34,5 @@ Layout/MultilineMethodCallIndentation:
   Enabled: true
   EnforcedStyle: indented
 Layout/LineLength:
-  Max: 1200
+  Max: 1300
+
