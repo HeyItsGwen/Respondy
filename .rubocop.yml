@@ -25,6 +25,7 @@ Style/ClassAndModuleChildren:
 Style/GuardClause:
   Enabled: false
 
+
 Layout/AlignHash:
   EnforcedColonStyle: key
 Layout/ExtraSpacing:
@@ -34,3 +35,4 @@ Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
 Layout/LineLength:
   Max: 1300
+
