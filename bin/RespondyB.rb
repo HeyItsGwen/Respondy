@@ -12,10 +12,6 @@ blocklist 'RespondyB'
 
 @start_time = DateTime.new(2019, 12, 29, 0, 0, 0)
 
-File.foreach('retweeted.txt') do |line|
-  @retweeted_array << line
-end
-
 def replyer
   replies do |tweet|
     reply "#USER# Did you know that #{@random_facts[rand(@random_facts.length)]}", tweet
