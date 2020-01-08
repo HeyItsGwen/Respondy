@@ -7,7 +7,8 @@ require 'spec_helper.rb'
 # When RSPEC runs, it tries to rerun the entire bot, from setting up authorization with twitter
 # To asking you to click a link and open your browser
 
-# The code below will never run, because when it runs a method, the Framework takes over.
+# The code below will never run, because when it runs a method, the Framework takes over. Without
+# the framework, I'd have to set up a websever to achieve authentication. And nobody wants that.
 
 # Unit testing for this should be done by removing all methods from the loop in RespondyB.rb
 # And testing them with different inputs each time.
