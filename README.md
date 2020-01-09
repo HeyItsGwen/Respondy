@@ -15,16 +15,22 @@ RespondyBot9000 is a twitter bot that tweets fun programming facts every 12 hour
 ## How To Use RespondyBot9000
 
 Using RespondyBot9000 is simple. It's twitter! 
-If you want to read fun programming facts, simply find @RespondyB and read the timeline.
-If you want to have a fun programming fact tweeted to you, mention @RespondyB in a tweet, and it will reply with a random fact about a multitude of programming languages.
-If you'd like to have your tweet retweeted (don't abuse it!), use the hashtag #respondyb (with any capitalization) and that tweet will be retweeted as soon as RespondyBot9000 finds it!
+If you want to read fun programming facts, simply find your accounts timeline! (@RespondyB was used for testing)
+If you want to have a fun programming fact tweeted to you, mention your account in a tweet, and it will reply with a random fact about a multitude of programming languages. (i.e: @RespondyB)
+If you'd like to have your tweet retweeted (don't abuse it!), use the hashtag #respondyb (or whichever hashtag you set up the both with, with any capitalization) and that tweet will be retweeted as soon as RespondyBot9000 finds it! 
 
-If you'd like to set up the bot to run on your own account, download the repo, run:
+If you'd like to set up the bot to run on your own account, You'll first need to get your twitter account approved on https://developer.twitter.com/, and create an app by clicking "apps" (in the top right, or in the dropdown menu on the left), and then clicking create an app. You'll then need to fill out a form about what the app does, what you're using it for, and your reasons for creating it.
+
+Once that's done, if it doesn't open your apps details automatically, find your app on the https://developer.twitter.com/, and click on details. From there you can click edit to change the apps icon, name, website, and other details.
+
+Once you have it set up as you'd like to, click on "keys and tokens", and then run:
 
 ```
 ruby /bin/RespondyB.rb
 ```
-From inside the root folder, and set up the authentication with your twitter account. To make the hashtag function work, you'll have to change this:
+From inside the root folder of the bot, and set up the authentication with your twitter account. It will ask for you keys, from the "keys and tokens" menu, and ask you to follow a link to log into your account. Whichever account you log into will do the tweeting, so make sure its the account you want!
+
+To make the hashtag function work with a different hashtag, you'll have to change this:
 ```
 def hashtag_responder
   search '#respondyb' do |tweet|
@@ -32,7 +38,7 @@ def hashtag_responder
   end
 end
 ```
-In methods rb. The hashtag in quotes is what the bot is searching for!
+In methods rb. The hashtag in single quotes is what the bot is searching for. Be aware though: If you change anything after 'unless', the bot will break after retweeting something, as it will try to retweet its own retweet!
 
 ## How It Works
 
